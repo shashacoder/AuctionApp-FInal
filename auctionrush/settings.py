@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'django_otp', 
+    'django_otp.plugins.otp_totp',
     # Login via Google as an exemple, you can choose facebook, twitter as you like
     'allauth.socialaccount.providers.google',
 ]
@@ -75,6 +77,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_otp.middleware.OTPMiddleware'
 ]
 
 ROOT_URLCONF = 'auctionrush.urls'

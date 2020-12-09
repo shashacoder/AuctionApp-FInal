@@ -20,7 +20,10 @@ from django.conf.urls.static import static
 from . import views
 from auctions import views as auctions_views
 from django.contrib.auth import views as auth_views
+from django_otp.admin import OTPAdminSite
 
+
+admin.site.__class__ = OTPAdminSite 
 
 urlpatterns = [
     path('', auctions_views.index, name="index"),
